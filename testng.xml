@@ -5,7 +5,7 @@
         <classes>
             <class name="org.yandrut.api.ApiTest">
                 <methods>
-
+                    <include name="yes">yes</include>
                 </methods>
             </class>
         </classes>
