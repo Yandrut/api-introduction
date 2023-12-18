@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6612c791-47cb-4d5a-acbb-61e5e5f562df" name="Changes" comment="olyaTSOM'">
+    <list default="true" id="6612c791-47cb-4d5a-acbb-61e5e5f562df" name="Changes" comment="review">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/yandrut/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/ApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Specifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/SuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/SuccessfulRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UnsuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UnsuccessfulRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,11 +179,20 @@
       <option name="project" value="LOCAL" />
       <updated>1702893877896</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="review">
+      <option name="closed" value="true" />
+      <created>1702893982951</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702893982951</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="olyaTSOM'" />
-    <option name="LAST_COMMIT_MESSAGE" value="olyaTSOM'" />
+    <MESSAGE value="review" />
+    <option name="LAST_COMMIT_MESSAGE" value="review" />
   </component>
 </project>
