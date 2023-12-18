@@ -126,8 +126,8 @@ public class ApiTest {
                 .extract().as(UserTimeResponse.class);
 
 
-        String regex = "(.{7})$";
-        String regexForResponse = "(.{12})$";
+        String regex = "(.{5})$";
+        String regexForResponse = "(.{6})$";
         String currentTime = Clock.systemUTC().instant().toString().replaceAll(regex, "");
         String responseTime = response.getUpdatedAt().replaceAll(regexForResponse, "");
 
