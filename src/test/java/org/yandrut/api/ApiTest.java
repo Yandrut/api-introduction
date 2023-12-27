@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 import static org.yandrut.data.Specifications.*;
 
 public class ApiTest {
-    Logger log = LogManager.getLogger(ApiTest.class);
+    private static final Logger log = LogManager.getLogger(ApiTest.class);
     private static final String URL = "https://reqres.in/";
     private static final String REGISTER_ENDPOINT = "api/register";
 
