@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6612c791-47cb-4d5a-acbb-61e5e5f562df" name="Changes" comment="review">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/yandrut/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/ApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/ApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Registration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Specifications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/SuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/SuccessfulRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UnsuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UnsuccessfulRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/ResourceData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/ResourceData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/Specifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/SuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/SuccessfulRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UnsuccessfulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/UnsuccessfulRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/UserTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/yandrut/api/UserTimeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/yandrut/data/UserTimeResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +48,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.ApiTest.allowsToDeleteUser.executor": "Run",
+    "TestNG.ApiTest.avatarNameContainsUserId.executor": "Run",
     "TestNG.ApiTest.currentAndResponseTimeMatches.executor": "Run",
     "TestNG.ApiTest.executor": "Debug",
     "TestNG.ApiTest.isResourcesListSortedByYear.executor": "Run",
     "TestNG.ApiTest.successfulRegisterTest.executor": "Run",
     "TestNG.ApiTest.unsuccessfulRegistrationTest.executor": "Run",
+    "TestNG.ApiTest.userEmailMatchesFormat.executor": "Run",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.yandrut" />
+    </key>
+  </component>
   <component name="RunManager" selected="TestNG.ApiTest.currentAndResponseTimeMatches">
     <configuration name="ApiTest.allowsToDeleteUser" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="api-introduction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.yandrut.api.*" />
+          <option name="PATTERN" value="org.yandrut.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,11 +82,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiTest.currentAndResponseTimeMatches" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ApiTest.avatarNameContainsUserId" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="api-introduction" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.yandrut.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.yandrut.api" />
+      <option name="MAIN_CLASS_NAME" value="org.yandrut.api.ApiTest" />
+      <option name="METHOD_NAME" value="avatarNameContainsUserId" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiTest.currentAndResponseTimeMatches" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="api-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.yandrut.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,47 +118,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiTest.isResourcesListSortedByYear" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="api-introduction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.yandrut.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.yandrut.api" />
-      <option name="MAIN_CLASS_NAME" value="org.yandrut.api.ApiTest" />
-      <option name="METHOD_NAME" value="isResourcesListSortedByYear" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiTest.successfulRegisterTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="api-introduction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.yandrut.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.yandrut.api" />
-      <option name="MAIN_CLASS_NAME" value="org.yandrut.api.ApiTest" />
-      <option name="METHOD_NAME" value="successfulRegisterTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApiTest.unsuccessfulRegistrationTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="api-introduction" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.yandrut.api.*" />
+          <option name="PATTERN" value="org.yandrut.data.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,13 +136,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiTest.userEmailMatchesFormat" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="api-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.yandrut.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.yandrut.api" />
+      <option name="MAIN_CLASS_NAME" value="org.yandrut.api.ApiTest" />
+      <option name="METHOD_NAME" value="userEmailMatchesFormat" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.ApiTest.currentAndResponseTimeMatches" />
         <item itemvalue="TestNG.ApiTest.allowsToDeleteUser" />
-        <item itemvalue="TestNG.ApiTest.isResourcesListSortedByYear" />
+        <item itemvalue="TestNG.ApiTest.userEmailMatchesFormat" />
+        <item itemvalue="TestNG.ApiTest.avatarNameContainsUserId" />
         <item itemvalue="TestNG.ApiTest.unsuccessfulRegistrationTest" />
-        <item itemvalue="TestNG.ApiTest.successfulRegisterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +196,23 @@
       <option name="project" value="LOCAL" />
       <updated>1702893982951</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="review">
+      <option name="closed" value="true" />
+      <created>1702894247976</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702894247976</updated>
+    </task>
+    <task id="LOCAL-00004" summary="review">
+      <option name="closed" value="true" />
+      <created>1702894365515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702894365515</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

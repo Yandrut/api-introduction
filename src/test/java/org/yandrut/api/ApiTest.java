@@ -1,33 +1,38 @@
 package org.yandrut.api;
 
-import static org.testng.Assert.*;
+import org.yandrut.data.*;
 import org.testng.annotations.Test;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.time.Clock;
 import java.util.List;
 import java.util.stream.Collectors;
+import static org.testng.Assert.*;
 import static io.restassured.RestAssured.given;
+import static org.yandrut.data.Specifications.*;
 
 public class ApiTest {
+    Logger log = LogManager.getLogger(ApiTest.class);
     private static final String URL = "https://reqres.in/";
+    private static final String REGISTER_ENDPOINT = "api/register";
 
     @Test
     public void successfulRegistrationTest() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(200));
+        submitSpecifications(requestSpec(URL), responseSpec(200));
 
-        Registration user = new Registration("eve.holt@reqres.in","pistol");
+        Registration registrationData = new Registration("eve.holt@reqres.in","pistol");
 
-        SuccessfulRegistration registration = given()
-                .body(user)
+        SuccessfulRegistration successfulRegistration = given()
+                .body(registrationData)
                 .when()
-                .post("api/register")
-                .then().log().all()
+                .post(REGISTER_ENDPOINT)
+                .then().log().body()
                 .extract().as(SuccessfulRegistration.class);
 
         Integer expectedId = 4;
-        Integer actualId = registration.getId();
+        Integer actualId = successfulRegistration.getId();
         String expectedToken = "QpwL5tke4Pnpja7X4";
-        String actualToken = registration.getToken();
+        String actualToken = successfulRegistration.getToken();
 
         assertEquals(expectedId, actualId);
         assertEquals(expectedToken, actualToken);
@@ -35,15 +40,15 @@ public class ApiTest {
 
     @Test
     public void unsuccessfulRegistrationTest() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(400));
+        submitSpecifications(requestSpec(URL), responseSpec(400));
 
         Registration user = new Registration("sydney@fife", "");
 
         UnsuccessfulRegistration registration = given()
                 .body(user)
                 .when()
-                .post("api/register")
-                .then().log().all()
+                .post(REGISTER_ENDPOINT)
+                .then().log().body()
                 .extract().as(UnsuccessfulRegistration.class);
 
         String expected = "Missing password";
@@ -54,12 +59,13 @@ public class ApiTest {
 
     @Test
     public void avatarNameContainsUserId() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(200));
+        submitSpecifications(requestSpec(URL), responseSpec(200));
 
         List<UserData> users = given()
+                .queryParam("page", 2)
                 .when()
-                .get("api/users?page=2")
-                .then().log().all()
+                .get("api/users")
+                .then().log().body()
                 .extract().body().jsonPath().getList("data", UserData.class);
 
         assertNotNull(users);
@@ -68,12 +74,13 @@ public class ApiTest {
 
     @Test
     public void userEmailMatchesFormat() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(200));
+        submitSpecifications(requestSpec(URL), responseSpec(200));
 
         List<UserData> users = given()
+                .queryParam("page", 2)
                 .when()
-                .get("api/users?page=2")
-                .then().log().all()
+                .get("api/users")
+                .then().log().body()
                 .extract().body().jsonPath().getList("data", UserData.class);
 
         assertNotNull(users);
@@ -82,12 +89,12 @@ public class ApiTest {
 
     @Test
     public void isResourcesListSortedByYear() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(200));
+        submitSpecifications(requestSpec(URL), responseSpec(200));
 
         List<ResourceData> resources = given()
                 .when()
                 .get("api/unknown")
-                .then().log().all()
+                .then().log().body()
                 .extract().body().jsonPath().getList("data", ResourceData.class);
 
         List<Integer> yearsActual = resources
@@ -105,32 +112,32 @@ public class ApiTest {
 
     @Test
     public void allowsToDeleteUser() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(204));
+        submitSpecifications(requestSpec(URL), responseSpec(204));
 
         given()
+                .pathParam("userId", 2)
                 .when()
-                .delete("api/users/2")
-                .then().log().all();
+                .delete("api/users/{userId}")
+                .then().log().body();
     }
 
     @Test
     public void currentAndResponseTimeMatches() {
-        Specifications.submitSpecifications(Specifications.requestSpec(URL), Specifications.responseSpec(200));
-        UserTime user = new UserTime("morpheus", "zion resident");
+        submitSpecifications(requestSpec(URL), responseSpec(200));
+        UserTime userTime = new UserTime("morpheus", "zion resident");
 
         UserTimeResponse response = given()
                 .when()
-                .body(user)
-                .put("api/users/2")
-                .then().log().all()
+                .pathParam("userId", 2)
+                .body(userTime)
+                .put("api/users/{userId}")
+                .then().log().body()
                 .extract().as(UserTimeResponse.class);
 
+        String currentTime = Clock.systemUTC().instant().toString();
+        String responseTime = response.getUpdatedAt();
 
-        String regex = "(.{5})$";
-        String regexForResponse = "(.{6})$";
-        String currentTime = Clock.systemUTC().instant().toString().replaceAll(regex, "");
-        String responseTime = response.getUpdatedAt().replaceAll(regexForResponse, "");
-
+        log.info(currentTime + " | " + responseTime);
         assertEquals(currentTime, responseTime);
     }
 }

@@ -1,4 +1,4 @@
-package org.yandrut.api;
+package org.yandrut.data;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
